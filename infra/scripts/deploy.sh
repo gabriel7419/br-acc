@@ -2,7 +2,6 @@
 set -euo pipefail
 
 DEPLOY_DIR="${DEPLOY_DIR:-/opt/icarus}"
-DOMAIN="${DOMAIN:?DOMAIN env var required — set to your production domain}"
 COMPOSE_FILE="$DEPLOY_DIR/infra/docker-compose.prod.yml"
 DRY_RUN=false
 
@@ -11,6 +10,13 @@ for arg in "$@"; do
         --dry-run) DRY_RUN=true ;;
     esac
 done
+
+# DOMAIN required for real deploys (health check needs it)
+if [ "$DRY_RUN" = false ] && [ -z "${DOMAIN:-}" ]; then
+    echo "Error: DOMAIN env var required — set to your production domain" >&2
+    exit 1
+fi
+DOMAIN="${DOMAIN:-localhost}"
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 

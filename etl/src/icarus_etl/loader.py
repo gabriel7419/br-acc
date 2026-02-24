@@ -1,9 +1,12 @@
 import logging
+import re
 from typing import Any
 
 from neo4j import Driver
 
 logger = logging.getLogger(__name__)
+
+_SAFE_KEY = re.compile(r"^[a-zA-Z_][a-zA-Z0-9_]*$")
 
 
 class Neo4jBatchLoader:
@@ -37,6 +40,7 @@ class Neo4jBatchLoader:
         for r in rows:
             all_keys.update(r.keys())
         all_keys.discard(key_field)
+        all_keys = {k for k in all_keys if _SAFE_KEY.match(k)}
         props = ", ".join(
             f"n.{k} = row.{k}" for k in sorted(all_keys)
         ) if rows else ""
