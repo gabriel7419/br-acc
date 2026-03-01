@@ -7,7 +7,7 @@ help:
 	@echo "  stop         - Stop the development environment"
 	@echo "  check        - Run static analysis and type checking"
 	@echo "  seed         - Generate the synthetic demo dataset"
-	@echo "  neutrality   - Placeholder for the neutrality audit"
+	@echo "  neutrality   - Run neutrality, privacy, and compliance gates"
 
 install:
 	@echo "--- Installing API dependencies ---"
@@ -38,7 +38,8 @@ seed:
 	@echo "The mechanism to load this data into the database is not specified in the project."
 
 neutrality:
-	@echo "--- Neutrality Audit ---"
-	@echo "The 'neutrality' check is mentioned in the documentation but no script was found."
-	@echo "This may be a manual audit process. See 'docs/release/public_repo_release_checklist.md'."
-
+	@echo "--- Neutrality Audit & Public Release Gates ---"
+	python3 scripts/check_public_privacy.py --repo-root .
+	python3 scripts/check_compliance_pack.py --repo-root .
+	python3 scripts/check_open_core_boundary.py --repo-root .
+	@echo "--- All neutrality and privacy gates passed ---"
