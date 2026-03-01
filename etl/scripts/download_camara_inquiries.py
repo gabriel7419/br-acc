@@ -413,7 +413,7 @@ def _write_manifest(
 )
 @click.option(
     "--billing-project",
-    default="icarus-corruptos",
+    default="bracc-corruptos",
     help="GCP billing project for BQ mode.",
 )
 @click.option(

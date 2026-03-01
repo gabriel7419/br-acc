@@ -1,5 +1,5 @@
 const API_BASE = import.meta.env.VITE_API_URL ?? "";
-const STORAGE_KEY = "icarus_auth";
+const STORAGE_KEY = "bracc_auth";
 
 export class ApiError extends Error {
   constructor(

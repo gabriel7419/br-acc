@@ -10,8 +10,8 @@ And a manifest:
   - download_manifest.json
 
 Usage:
-  python etl/scripts/download_cnpj_bq.py --billing-project icarus-corruptos
-  python etl/scripts/download_cnpj_bq.py --billing-project icarus-corruptos --tables socios
+  python etl/scripts/download_cnpj_bq.py --billing-project bracc-corruptos
+  python etl/scripts/download_cnpj_bq.py --billing-project bracc-corruptos --tables socios
 """
 
 from __future__ import annotations

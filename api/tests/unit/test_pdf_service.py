@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from icarus.models.investigation import Annotation, InvestigationResponse, Tag
+from bracc.models.investigation import Annotation, InvestigationResponse, Tag
 
 FAKE_PDF = b"%PDF-1.4 fake pdf content for testing"
 
@@ -62,7 +62,7 @@ def _mock_weasyprint() -> object:  # type: ignore[misc]
 
 @pytest.mark.anyio
 async def test_render_pdf_produces_valid_pdf() -> None:
-    from icarus.services.pdf_service import render_investigation_pdf
+    from bracc.services.pdf_service import render_investigation_pdf
 
     investigation = _make_investigation()
     annotations = [_make_annotation()]
@@ -79,7 +79,7 @@ async def test_render_pdf_produces_valid_pdf() -> None:
 
 @pytest.mark.anyio
 async def test_render_pdf_handles_empty_data() -> None:
-    from icarus.services.pdf_service import render_investigation_pdf
+    from bracc.services.pdf_service import render_investigation_pdf
 
     investigation = _make_investigation(description=None)
 
@@ -91,7 +91,7 @@ async def test_render_pdf_handles_empty_data() -> None:
 
 @pytest.mark.anyio
 async def test_render_pdf_lang_pt() -> None:
-    from icarus.services.pdf_service import render_investigation_pdf
+    from bracc.services.pdf_service import render_investigation_pdf
 
     investigation = _make_investigation()
 
@@ -103,7 +103,7 @@ async def test_render_pdf_lang_pt() -> None:
 
 @pytest.mark.anyio
 async def test_render_pdf_lang_en() -> None:
-    from icarus.services.pdf_service import render_investigation_pdf
+    from bracc.services.pdf_service import render_investigation_pdf
 
     investigation = _make_investigation()
 

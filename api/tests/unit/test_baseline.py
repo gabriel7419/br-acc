@@ -1,11 +1,11 @@
 import pytest
 from httpx import AsyncClient
 
-from icarus.services.baseline_service import BASELINE_QUERIES
+from bracc.services.baseline_service import BASELINE_QUERIES
 
 
 def test_baseline_query_files_exist() -> None:
-    from icarus.services.neo4j_service import CypherLoader
+    from bracc.services.neo4j_service import CypherLoader
 
     for dimension, query_name in BASELINE_QUERIES.items():
         try:

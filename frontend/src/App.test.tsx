@@ -30,7 +30,7 @@ describe("App", () => {
         <App />
       </MemoryRouter>,
     );
-    expect(screen.getAllByText("ICARUS").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("BRACC").length).toBeGreaterThan(0);
   });
 
   it("renders login page at /login", () => {

@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from icarus_etl.pipelines.un_sanctions import (
+from bracc_etl.pipelines.un_sanctions import (
     VALID_ENTITY_TYPES,
     UnSanctionsPipeline,
     _generate_sanction_id,

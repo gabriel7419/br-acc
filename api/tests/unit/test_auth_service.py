@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import jwt
 import pytest
 
-from icarus.config import settings
-from icarus.services.auth_service import (
+from bracc.config import settings
+from bracc.services.auth_service import (
     authenticate_user,
     create_access_token,
     decode_access_token,
@@ -69,7 +69,7 @@ async def test_register_user_success() -> None:
     })
 
     with patch(
-        "icarus.services.auth_service.execute_query_single",
+        "bracc.services.auth_service.execute_query_single",
         new_callable=AsyncMock,
         return_value=mock_record,
     ):
@@ -102,7 +102,7 @@ async def test_authenticate_user_success() -> None:
     })
 
     with patch(
-        "icarus.services.auth_service.execute_query_single",
+        "bracc.services.auth_service.execute_query_single",
         new_callable=AsyncMock,
         return_value=mock_record,
     ):
@@ -123,7 +123,7 @@ async def test_authenticate_user_wrong_password() -> None:
     })
 
     with patch(
-        "icarus.services.auth_service.execute_query_single",
+        "bracc.services.auth_service.execute_query_single",
         new_callable=AsyncMock,
         return_value=mock_record,
     ):
@@ -135,7 +135,7 @@ async def test_authenticate_user_wrong_password() -> None:
 @pytest.mark.anyio
 async def test_authenticate_user_not_found() -> None:
     with patch(
-        "icarus.services.auth_service.execute_query_single",
+        "bracc.services.auth_service.execute_query_single",
         new_callable=AsyncMock,
         return_value=None,
     ):

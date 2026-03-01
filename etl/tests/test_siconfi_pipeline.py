@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from icarus_etl.pipelines.siconfi import SiconfiPipeline
+from bracc_etl.pipelines.siconfi import SiconfiPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

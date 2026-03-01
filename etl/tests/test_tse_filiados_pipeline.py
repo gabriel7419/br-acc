@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.tse_filiados import TseFiliadosPipeline, _membership_id
+from bracc_etl.pipelines.tse_filiados import TseFiliadosPipeline, _membership_id
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

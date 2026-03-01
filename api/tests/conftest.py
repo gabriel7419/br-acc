@@ -4,8 +4,8 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from httpx import ASGITransport, AsyncClient
 
-from icarus.main import app
-from icarus.services.auth_service import create_access_token
+from bracc.main import app
+from bracc.services.auth_service import create_access_token
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from icarus_etl.pipelines.bndes import BndesPipeline
+from bracc_etl.pipelines.bndes import BndesPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

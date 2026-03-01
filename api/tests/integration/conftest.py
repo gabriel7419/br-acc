@@ -6,7 +6,7 @@ from httpx import ASGITransport, AsyncClient
 from neo4j import AsyncDriver, AsyncGraphDatabase, AsyncSession
 from testcontainers.neo4j import Neo4jContainer
 
-from icarus.main import app
+from bracc.main import app
 
 
 @pytest.fixture(scope="session")

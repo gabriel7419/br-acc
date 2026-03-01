@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock
 
-from icarus_etl.base import Pipeline
+from bracc_etl.base import Pipeline
 
 
 class DummyPipeline(Pipeline):

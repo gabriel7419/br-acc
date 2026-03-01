@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from icarus_etl.pipelines.comprasnet import ComprasnetPipeline
+from bracc_etl.pipelines.comprasnet import ComprasnetPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

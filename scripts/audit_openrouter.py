@@ -46,7 +46,7 @@ def call_openrouter(system_prompt: str, user_prompt: str, model: str) -> str:
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
-                "HTTP-Referer": "https://github.com/icarus-project",
+                "HTTP-Referer": "https://github.com/bracc-project",
             },
             json={
                 "model": model,

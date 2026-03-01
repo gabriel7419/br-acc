@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 import pytest
 
-from icarus.middleware.cpf_masking import (
+from bracc.middleware.cpf_masking import (
     _collect_pep_cpfs,
     _is_pep_record,
     mask_cpfs_in_json,

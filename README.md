@@ -1,19 +1,15 @@
-# BRACC Open Graph
+# BR/ACC Open Graph
 
 [![BRACC Header](docs/brand/bracc-header.jpg)](docs/brand/bracc-header.jpg)
 
-Language: **English** | [Português (Brasil)](README.pt-BR.md)
+Language: **English** | [Português (Brasil)](docs/pt-BR/README.md)
 
 [![CI](https://github.com/World-Open-Graph/br-acc/actions/workflows/ci.yml/badge.svg)](https://github.com/World-Open-Graph/br-acc/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-BRACC Open Graph is an open-source graph infrastructure for public data intelligence.
-Primary website: [bracc.org](https://bracc.org)
+BR/ACC Open Graph is an open-source graph infrastructure for public data intelligence, built as an initiative from [World Open Graph](https://worldopengraph.com). Primary website: [bracc.org](https://bracc.org)
 
-BRACC Open Graph is an initiative from [World Open Graph](https://worldopengraph.com).
-This repository contains the full code for the public BRACC edition.
-
-## What BRACC Represents
+## What BR/ACC Represents
 
 - Public-interest graph infrastructure for transparency work.
 - Reproducible ingestion and processing for public records.
@@ -103,8 +99,8 @@ Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) for wor
 
 ## Contributors
 
-- [Bruno Cesar](https://github.com/brunoclz) — creator and maintainer
-- Codex — AI-assisted engineering contributor
+- BRACC Core Team — maintainers
+- OpenAI Codex — AI-assisted engineering contributor
 
 ## Legal & Ethics
 

@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.bcb import BcbPipeline, _generate_penalty_id
+from bracc_etl.pipelines.bcb import BcbPipeline, _generate_penalty_id
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

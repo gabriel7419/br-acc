@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.cvm import CvmPipeline
+from bracc_etl.pipelines.cvm import CvmPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

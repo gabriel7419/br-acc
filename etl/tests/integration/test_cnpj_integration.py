@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 from neo4j import Driver
 
-from icarus_etl.pipelines.cnpj import CNPJPipeline
+from bracc_etl.pipelines.cnpj import CNPJPipeline
 
 FIXTURES = Path(__file__).parent.parent / "fixtures"
 

@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.pep_cgu import PepCguPipeline
+from bracc_etl.pipelines.pep_cgu import PepCguPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from icarus_etl.transforms.value_sanitization import (
+from bracc_etl.transforms.value_sanitization import (
     MAX_CONTRACT_VALUE,
     cap_contract_value,
 )

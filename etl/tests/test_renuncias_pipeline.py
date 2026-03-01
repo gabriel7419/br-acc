@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from icarus_etl.pipelines.renuncias import RenunciasPipeline, _parse_brl
+from bracc_etl.pipelines.renuncias import RenunciasPipeline, _parse_brl
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

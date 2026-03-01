@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from icarus_etl.pipelines.cvm_funds import CvmFundsPipeline
+from bracc_etl.pipelines.cvm_funds import CvmFundsPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

@@ -2,7 +2,7 @@
 
 ## 1) Prepare sanitized snapshot
 ```bash
-bash scripts/prepare_public_snapshot.sh /Users/brunoclz/CORRUPTOS /tmp/br-acc-public
+bash scripts/prepare_public_snapshot.sh /path/to/your/workspace /tmp/br-acc-public
 ```
 
 ## 2) Initialize clean-history repo from snapshot
@@ -14,7 +14,7 @@ git commit -m "Initial public release (WTG)"
 ```
 
 ## 3) Create GitHub repository (manual)
-- Owner: `brunoclz`
+- Owner: `World-Open-Graph` (or your target org)
 - Name: `br-acc`
 - Visibility: Public
 - Do not auto-add README/License (already present)
@@ -22,7 +22,7 @@ git commit -m "Initial public release (WTG)"
 ## 4) Push initial release
 ```bash
 git branch -M main
-git remote add origin https://github.com/brunoclz/br-acc.git
+git remote add origin https://github.com/World-Open-Graph/br-acc.git
 git push -u origin main
 ```
 

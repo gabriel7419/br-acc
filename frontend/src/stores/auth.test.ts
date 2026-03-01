@@ -35,7 +35,7 @@ Object.defineProperty(globalThis, "localStorage", { value: localStorageMock });
 
 import { useAuthStore } from "./auth";
 
-const STORAGE_KEY = "icarus_auth";
+const STORAGE_KEY = "bracc_auth";
 
 function resetStore() {
   useAuthStore.setState({

@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock
 
-from icarus.middleware.rate_limit import _get_rate_limit_key, limiter
-from icarus.services.auth_service import create_access_token
+from bracc.middleware.rate_limit import _get_rate_limit_key, limiter
+from bracc.services.auth_service import create_access_token
 
 
 def _make_request(auth_header: str | None = None, client_ip: str = "127.0.0.1") -> MagicMock:

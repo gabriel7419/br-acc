@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.world_bank import (
+from bracc_etl.pipelines.world_bank import (
     WorldBankPipeline,
     _make_debarment_id,
 )

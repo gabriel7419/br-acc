@@ -285,7 +285,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--runner-path",
-        default="etl/src/icarus_etl/runner.py",
+        default="etl/src/bracc_etl/runner.py",
         help="Path to ETL runner with PIPELINES map",
     )
     parser.add_argument(

@@ -31,7 +31,7 @@ import { useGraphExplorerStore } from "@/stores/graphExplorer";
 
 import styles from "./EntityAnalysis.module.css";
 
-const RECENT_KEY = "icarus_recent_analyses";
+const RECENT_KEY = "bracc_recent_analyses";
 const MAX_RECENT = 10;
 
 interface RecentAnalysis {

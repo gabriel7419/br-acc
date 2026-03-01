@@ -72,8 +72,8 @@ rm -f "$OUT_DIR/docs/shadow_rollout_runbook.md"
 rm -f "$OUT_DIR/docs/ingestion_priority_runbook.md"
 rm -f "$OUT_DIR/docs/ops/storage_operations.md"
 rm -f "$OUT_DIR/scripts/auto_finalize_pncp_backfill.sh"
-rm -f "$OUT_DIR/api/src/icarus/services/pattern_service.py"
-rm -f "$OUT_DIR/api/src/icarus/queries/pattern_"*.cypher
+rm -f "$OUT_DIR/api/src/bracc/services/pattern_service.py"
+rm -f "$OUT_DIR/api/src/bracc/queries/pattern_"*.cypher
 rm -f "$OUT_DIR/api/tests/unit/test_patterns.py"
 rm -f "$OUT_DIR/api/tests/unit/test_patterns_new.py"
 

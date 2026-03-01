@@ -3,10 +3,10 @@ from unittest.mock import AsyncMock, patch
 import pytest
 from httpx import AsyncClient
 
-from icarus.config import settings
-from icarus.models.pattern import PATTERN_METADATA
+from bracc.config import settings
+from bracc.models.pattern import PATTERN_METADATA
 
-pattern_service = pytest.importorskip("icarus.services.pattern_service")
+pattern_service = pytest.importorskip("bracc.services.pattern_service")
 PATTERN_QUERIES = pattern_service.PATTERN_QUERIES
 
 
@@ -21,7 +21,7 @@ def test_all_patterns_have_metadata() -> None:
 
 
 def test_all_patterns_have_query_files() -> None:
-    from icarus.services.neo4j_service import CypherLoader
+    from bracc.services.neo4j_service import CypherLoader
 
     for _pattern_id, query_name in PATTERN_QUERIES.items():
         try:
@@ -73,7 +73,7 @@ async def test_invalid_pattern_returns_404(client: AsyncClient) -> None:
 
 @pytest.mark.anyio
 async def test_patterns_endpoint_forwards_include_probable(client: AsyncClient) -> None:
-    with patch("icarus.routers.patterns.run_all_patterns", new_callable=AsyncMock) as mock_run_all:
+    with patch("bracc.routers.patterns.run_all_patterns", new_callable=AsyncMock) as mock_run_all:
         mock_run_all.return_value = []
         response = await client.get("/api/v1/patterns/test-id?include_probable=true")
     assert response.status_code == 200
@@ -85,7 +85,7 @@ async def test_patterns_endpoint_forwards_include_probable(client: AsyncClient) 
 
 @pytest.mark.anyio
 async def test_specific_pattern_endpoint_forwards_include_probable(client: AsyncClient) -> None:
-    with patch("icarus.routers.patterns.run_pattern", new_callable=AsyncMock) as mock_run_one:
+    with patch("bracc.routers.patterns.run_pattern", new_callable=AsyncMock) as mock_run_one:
         mock_run_one.return_value = []
         response = await client.get(
             "/api/v1/patterns/test-id/debtor_contracts?include_probable=true",
@@ -100,7 +100,7 @@ async def test_specific_pattern_endpoint_forwards_include_probable(client: Async
 
 def test_patrimony_query_guards_divide_by_zero() -> None:
     """pattern_patrimony.cypher must require patrimonio_declarado > 0 to avoid div-by-zero."""
-    from icarus.services.neo4j_service import CypherLoader
+    from bracc.services.neo4j_service import CypherLoader
 
     try:
         cypher = CypherLoader.load("pattern_patrimony")
@@ -114,7 +114,7 @@ def test_patrimony_query_guards_divide_by_zero() -> None:
 
 def test_pattern_queries_use_parameter_binding() -> None:
     """All pattern .cypher files must use $entity_id parameter binding, not string interpolation."""
-    from icarus.services.neo4j_service import CypherLoader
+    from bracc.services.neo4j_service import CypherLoader
 
     for _pattern_id, query_name in PATTERN_QUERIES.items():
         try:

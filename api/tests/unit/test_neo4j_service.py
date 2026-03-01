@@ -3,7 +3,7 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from icarus.services.neo4j_service import CypherLoader, execute_query, execute_query_single
+from bracc.services.neo4j_service import CypherLoader, execute_query, execute_query_single
 
 
 @pytest.fixture(autouse=True)
@@ -16,7 +16,7 @@ class TestCypherLoader:
         query_file = tmp_path / "test_query.cypher"
         query_file.write_text("MATCH (n) RETURN n LIMIT $limit")
 
-        import icarus.services.neo4j_service as mod
+        import bracc.services.neo4j_service as mod
 
         original = mod.QUERIES_DIR
         mod.QUERIES_DIR = tmp_path
@@ -30,7 +30,7 @@ class TestCypherLoader:
         query_file = tmp_path / "cached.cypher"
         query_file.write_text("RETURN 1")
 
-        import icarus.services.neo4j_service as mod
+        import bracc.services.neo4j_service as mod
 
         original = mod.QUERIES_DIR
         mod.QUERIES_DIR = tmp_path
@@ -49,7 +49,7 @@ class TestCypherLoader:
         query_file = tmp_path / "clearable.cypher"
         query_file.write_text("RETURN 1")
 
-        import icarus.services.neo4j_service as mod
+        import bracc.services.neo4j_service as mod
 
         original = mod.QUERIES_DIR
         mod.QUERIES_DIR = tmp_path
@@ -68,7 +68,7 @@ class TestExecuteQuery:
         query_file = tmp_path / "test.cypher"
         query_file.write_text("MATCH (n) RETURN n")
 
-        import icarus.services.neo4j_service as mod
+        import bracc.services.neo4j_service as mod
 
         original = mod.QUERIES_DIR
         mod.QUERIES_DIR = tmp_path
@@ -93,7 +93,7 @@ class TestExecuteQuery:
         query_file = tmp_path / "single.cypher"
         query_file.write_text("RETURN 1 AS ok")
 
-        import icarus.services.neo4j_service as mod
+        import bracc.services.neo4j_service as mod
 
         original = mod.QUERIES_DIR
         mod.QUERIES_DIR = tmp_path

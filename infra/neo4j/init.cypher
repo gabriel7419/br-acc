@@ -1,4 +1,4 @@
-// ICARUS Neo4j Schema — Constraints and Indexes
+// BRACC Neo4j Schema — Constraints and Indexes
 // Applied on database initialization
 
 // ── Uniqueness Constraints ──────────────────────────────

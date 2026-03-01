@@ -52,7 +52,7 @@ def test_download_cnpj_bq_writes_manifest_on_success(
         module.main,
         [
             "--billing-project",
-            "icarus-corruptos",
+            "bracc-corruptos",
             "--output-dir",
             str(tmp_path),
             "--dataset",
@@ -99,7 +99,7 @@ def test_download_cnpj_bq_fails_closed_when_table_fails(
         module.main,
         [
             "--billing-project",
-            "icarus-corruptos",
+            "bracc-corruptos",
             "--output-dir",
             str(tmp_path),
             "--dataset",

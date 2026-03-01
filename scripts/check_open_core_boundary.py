@@ -7,8 +7,8 @@ import argparse
 from pathlib import Path
 
 FORBIDDEN_PATH_GLOBS = (
-    "api/src/icarus/services/pattern_service.py",
-    "api/src/icarus/queries/pattern_*.cypher",
+    "api/src/bracc/services/pattern_service.py",
+    "api/src/bracc/queries/pattern_*.cypher",
     "scripts/auto_finalize_pncp_backfill.sh",
     "docs/shadow_rollout_runbook.md",
     "docs/ingestion_priority_runbook.md",
@@ -18,12 +18,12 @@ FORBIDDEN_PATH_GLOBS = (
 )
 
 FORBIDDEN_IMPORT_TOKENS = (
-    "from icarus.services.pattern_service import",
+    "from bracc.services.pattern_service import",
 )
 
 PUBLIC_SURFACE_GLOBS = (
-    "api/src/icarus/routers/*.py",
-    "api/src/icarus/main.py",
+    "api/src/bracc/routers/*.py",
+    "api/src/bracc/main.py",
 )
 
 def check_forbidden_paths(repo_root: Path) -> list[str]:

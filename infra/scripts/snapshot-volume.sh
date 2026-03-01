@@ -5,9 +5,9 @@ set -euo pipefail
 # Requires: hcloud CLI authenticated (hcloud context use <project>)
 # Usage: bash infra/scripts/snapshot-volume.sh [volume-name]
 
-VOLUME_NAME="${1:-icarus-neo4j-data}"
+VOLUME_NAME="${1:-bracc-neo4j-data}"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
-SNAPSHOT_DESC="icarus-backup-${TIMESTAMP}"
+SNAPSHOT_DESC="bracc-backup-${TIMESTAMP}"
 
 if ! command -v hcloud &> /dev/null; then
     echo "Error: hcloud CLI not installed. Install from https://github.com/hetznercloud/cli"
@@ -31,7 +31,7 @@ CUTOFF=$(date -d '30 days ago' +%Y-%m-%dT%H:%M:%S 2>/dev/null || date -v-30d +%Y
 hcloud volume list-snapshots "$VOLUME_ID" -o columns=id,description,created \
     | tail -n +2 \
     | while read -r snap_id snap_desc snap_created; do
-        if [[ "$snap_desc" == icarus-backup-* ]] && [[ "$snap_created" < "$CUTOFF" ]]; then
+        if [[ "$snap_desc" == bracc-backup-* ]] && [[ "$snap_created" < "$CUTOFF" ]]; then
             echo "Deleting old snapshot $snap_id ($snap_desc)"
             hcloud volume delete-snapshot "$snap_id"
         fi

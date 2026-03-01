@@ -3,7 +3,7 @@ from unittest.mock import AsyncMock, MagicMock
 import pytest
 from httpx import AsyncClient
 
-from icarus.services.auth_service import create_access_token, hash_password
+from bracc.services.auth_service import create_access_token, hash_password
 
 
 def _mock_record(data: dict[str, object]) -> MagicMock:
@@ -41,7 +41,7 @@ async def test_register_success(client: AsyncClient) -> None:
         "created_at": "2026-01-01T00:00:00Z",
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_mock_session(app.state.neo4j_driver, [record])
 
@@ -57,7 +57,7 @@ async def test_register_success(client: AsyncClient) -> None:
 
 @pytest.mark.anyio
 async def test_register_bad_invite(client: AsyncClient) -> None:
-    from icarus.config import settings
+    from bracc.config import settings
 
     original = settings.invite_code
     try:
@@ -81,7 +81,7 @@ async def test_login_success(client: AsyncClient) -> None:
         "created_at": "2026-01-01T00:00:00Z",
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_mock_session(app.state.neo4j_driver, [record])
 
@@ -105,7 +105,7 @@ async def test_login_bad_password(client: AsyncClient) -> None:
         "created_at": "2026-01-01T00:00:00Z",
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_mock_session(app.state.neo4j_driver, [record])
 
@@ -125,7 +125,7 @@ async def test_me_authenticated(client: AsyncClient) -> None:
         "created_at": "2026-01-01T00:00:00Z",
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_mock_session(app.state.neo4j_driver, [user_record])
 
@@ -156,7 +156,7 @@ async def test_me_invalid_token(client: AsyncClient) -> None:
 
 @pytest.mark.anyio
 async def test_register_duplicate_email(client: AsyncClient) -> None:
-    from icarus.main import app
+    from bracc.main import app
 
     driver = app.state.neo4j_driver
     mock_session = AsyncMock()

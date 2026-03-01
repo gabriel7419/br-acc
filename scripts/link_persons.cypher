@@ -1,4 +1,4 @@
-// ICARUS — Person Node SAME_AS Linking
+// BRACC — Person Node SAME_AS Linking
 // Creates SAME_AS relationships between Person nodes representing the same individual.
 // Non-destructive: keeps separate nodes for source attribution, links them for traversal.
 // Run once as a migration, then periodically after ETL reloads.

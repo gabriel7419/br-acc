@@ -1,7 +1,7 @@
 from pytest import MonkeyPatch
 
-from icarus.config import settings
-from icarus.services import intelligence_provider as provider_module
+from bracc.config import settings
+from bracc.services import intelligence_provider as provider_module
 
 
 def test_falls_back_to_community_when_full_modules_missing(

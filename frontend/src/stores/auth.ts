@@ -2,7 +2,7 @@ import { create } from "zustand";
 
 import { apiFetch, ApiError } from "@/api/client";
 
-const STORAGE_KEY = "icarus_auth";
+const STORAGE_KEY = "bracc_auth";
 
 interface AuthUser {
   id: string;

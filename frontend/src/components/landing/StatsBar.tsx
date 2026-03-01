@@ -32,7 +32,7 @@ function formatLargeNumber(n: number): { value: number; suffix: string } {
   return { value: n, suffix: "" };
 }
 
-const STATS_CACHE_KEY = "icarus_stats_cache";
+const STATS_CACHE_KEY = "bracc_stats_cache";
 
 function getCachedStats(): StatsResponse | null {
   try {

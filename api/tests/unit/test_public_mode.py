@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock, patch
 
 import pytest
 
-from icarus.config import settings
+from bracc.config import settings
 
 if TYPE_CHECKING:
     from httpx import AsyncClient
@@ -88,7 +88,7 @@ async def test_search_hides_person_nodes_in_public_mode(
         },
     ]
     with patch(
-        "icarus.routers.search.execute_query",
+        "bracc.routers.search.execute_query",
         new_callable=AsyncMock,
         return_value=mocked_records,
     ):
@@ -103,7 +103,7 @@ async def test_search_hides_person_nodes_in_public_mode(
 @pytest.mark.anyio
 async def test_public_meta_endpoint(client: AsyncClient) -> None:
     with patch(
-        "icarus.routers.public.execute_query_single",
+        "bracc.routers.public.execute_query_single",
         new_callable=AsyncMock,
         return_value={
             "total_nodes": 10,
@@ -125,7 +125,7 @@ async def test_public_meta_endpoint(client: AsyncClient) -> None:
 
 @pytest.mark.anyio
 async def test_public_patterns_company_endpoint(client: AsyncClient) -> None:
-    with patch("icarus.routers.public.settings.patterns_enabled", False):
+    with patch("bracc.routers.public.settings.patterns_enabled", False):
         response = await client.get("/api/v1/public/patterns/company/11111111000111")
     assert response.status_code == 503
     assert "temporarily unavailable" in response.json()["detail"]
@@ -134,9 +134,9 @@ async def test_public_patterns_company_endpoint(client: AsyncClient) -> None:
 @pytest.mark.anyio
 async def test_public_patterns_company_endpoint_when_enabled(client: AsyncClient) -> None:
     with (
-        patch("icarus.routers.public.settings.patterns_enabled", True),
+        patch("bracc.routers.public.settings.patterns_enabled", True),
         patch(
-            "icarus.routers.public.execute_query_single",
+            "bracc.routers.public.execute_query_single",
             new_callable=AsyncMock,
             return_value={
                 "c": {"cnpj": "11.111.111/0001-11", "razao_social": "Empresa Teste"},
@@ -145,7 +145,7 @@ async def test_public_patterns_company_endpoint_when_enabled(client: AsyncClient
             },
         ),
         patch(
-            "icarus.routers.public.execute_query",
+            "bracc.routers.public.execute_query",
             new_callable=AsyncMock,
             return_value=[
                 {
@@ -176,7 +176,7 @@ async def test_public_patterns_company_endpoint_when_enabled(client: AsyncClient
 async def test_public_graph_company_filters_person_nodes(client: AsyncClient) -> None:
     with (
         patch(
-            "icarus.routers.public.execute_query_single",
+            "bracc.routers.public.execute_query_single",
             new_callable=AsyncMock,
             return_value={
                 "c": {"cnpj": "11.111.111/0001-11", "razao_social": "Empresa Teste"},
@@ -185,7 +185,7 @@ async def test_public_graph_company_filters_person_nodes(client: AsyncClient) ->
             },
         ),
         patch(
-            "icarus.routers.public.execute_query",
+            "bracc.routers.public.execute_query",
             new_callable=AsyncMock,
             return_value=[
                 {

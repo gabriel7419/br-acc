@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DEPLOY_DIR="${DEPLOY_DIR:-/opt/icarus}"
+DEPLOY_DIR="${DEPLOY_DIR:-/opt/bracc}"
 COMPOSE_FILE="$DEPLOY_DIR/infra/docker-compose.prod.yml"
 DRY_RUN=false
 
@@ -20,7 +20,7 @@ DOMAIN="${DOMAIN:-localhost}"
 
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*"; }
 
-log "Deploying ICARUS..."
+log "Deploying BRACC..."
 
 cd "$DEPLOY_DIR"
 

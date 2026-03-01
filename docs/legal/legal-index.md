@@ -4,7 +4,7 @@ Policy-Version: v1.1.0
 Effective-Date: 2026-03-01  
 Owner: WTG Governance Team
 
-Language: **English** | [Português (Brasil)](./legal-index.pt-BR.md)
+Language: **English** | [Português (Brasil)](../pt-BR/legal-index.md)
 
 ## Core policies
 
@@ -15,13 +15,13 @@ Language: **English** | [Português (Brasil)](./legal-index.pt-BR.md)
 - [DISCLAIMER.md](../../DISCLAIMER.md)
 - [SECURITY.md](../../SECURITY.md)
 - [ABUSE_RESPONSE.md](../../ABUSE_RESPONSE.md)
-- [ETHICS.pt-BR.md](../../ETHICS.pt-BR.md)
-- [LGPD.pt-BR.md](../../LGPD.pt-BR.md)
-- [PRIVACY.pt-BR.md](../../PRIVACY.pt-BR.md)
-- [TERMS.pt-BR.md](../../TERMS.pt-BR.md)
-- [DISCLAIMER.pt-BR.md](../../DISCLAIMER.pt-BR.md)
-- [SECURITY.pt-BR.md](../../SECURITY.pt-BR.md)
-- [ABUSE_RESPONSE.pt-BR.md](../../ABUSE_RESPONSE.pt-BR.md)
+- [ETHICS.md](../pt-BR/ETHICS.md)
+- [LGPD.md](../pt-BR/LGPD.md)
+- [PRIVACY.md](../pt-BR/PRIVACY.md)
+- [TERMS.md](../pt-BR/TERMS.md)
+- [DISCLAIMER.md](../pt-BR/DISCLAIMER.md)
+- [SECURITY.md](../pt-BR/SECURITY.md)
+- [ABUSE_RESPONSE.md](../pt-BR/ABUSE_RESPONSE.md)
 - [public-compliance-pack.md](./public-compliance-pack.md)
 
 ## Applicability by deployment model

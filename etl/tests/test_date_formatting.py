@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from icarus_etl.transforms.date_formatting import parse_date
+from bracc_etl.transforms.date_formatting import parse_date
 
 
 @pytest.mark.parametrize(

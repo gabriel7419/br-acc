@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.senado_cpis import (
+from bracc_etl.pipelines.senado_cpis import (
     SenadoCpisPipeline,
     _make_cpi_id,
 )

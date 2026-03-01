@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.ceaf import CeafPipeline
+from bracc_etl.pipelines.ceaf import CeafPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

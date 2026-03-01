@@ -2,8 +2,8 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from icarus.services.neo4j_service import CypherLoader
-from icarus.services.score_service import (
+from bracc.services.neo4j_service import CypherLoader
+from bracc.services.score_service import (
     _conn_percentile,
     _fin_percentile,
     compute_exposure,

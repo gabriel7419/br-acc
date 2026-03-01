@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from icarus_etl.pipelines.siop import SiopPipeline, _classify_amendment_type, _parse_brl
+from bracc_etl.pipelines.siop import SiopPipeline, _classify_amendment_type, _parse_brl
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

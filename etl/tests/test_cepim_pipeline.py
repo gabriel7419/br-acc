@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.cepim import CepimPipeline, _generate_ngo_id
+from bracc_etl.pipelines.cepim import CepimPipeline, _generate_ngo_id
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

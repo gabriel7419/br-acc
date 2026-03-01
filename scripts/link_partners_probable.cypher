@@ -1,4 +1,4 @@
-// ICARUS — Probabilistic Partner->Person linking (non-factual)
+// BRACC — Probabilistic Partner->Person linking (non-factual)
 //
 // Creates POSSIBLE_SAME_AS edges to bridge masked CPF partners to strong Person identities
 // without mutating factual SOCIO_DE semantics.

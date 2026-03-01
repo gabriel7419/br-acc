@@ -1,4 +1,4 @@
-from icarus_etl.transforms import (
+from bracc_etl.transforms import (
     classify_document,
     deduplicate_rows,
     format_cnpj,

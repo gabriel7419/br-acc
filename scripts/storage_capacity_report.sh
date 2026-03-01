@@ -4,8 +4,8 @@ set -euo pipefail
 # Daily storage report for operational capacity planning.
 # Writes markdown report + appends machine-readable history CSV.
 
-REPORT_PATH="${1:-/opt/icarus/audit-results/storage_weekly_capacity.md}"
-HISTORY_CSV="${2:-/opt/icarus/audit-results/storage-capacity/history.csv}"
+REPORT_PATH="${1:-/opt/bracc/audit-results/storage_weekly_capacity.md}"
+HISTORY_CSV="${2:-/opt/bracc/audit-results/storage-capacity/history.csv}"
 NOW_UTC="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 NOW_DATE="$(date -u +'%Y-%m-%d')"
 
@@ -68,9 +68,9 @@ fi
   echo
   (sudo du -x -h --max-depth=1 /data 2>/dev/null | sort -h | tail -n 15) || true
   echo
-  echo "## Top Directories (/opt/icarus)"
+  echo "## Top Directories (/opt/bracc)"
   echo
-  (du -x -h --max-depth=1 /opt/icarus 2>/dev/null | sort -h | tail -n 20) || true
+  (du -x -h --max-depth=1 /opt/bracc 2>/dev/null | sort -h | tail -n 20) || true
 } > "$REPORT_PATH"
 
 echo "report_path=$REPORT_PATH"

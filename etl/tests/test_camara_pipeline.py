@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.camara import CamaraPipeline, _make_expense_id, _parse_brl_value
+from bracc_etl.pipelines.camara import CamaraPipeline, _make_expense_id, _parse_brl_value
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

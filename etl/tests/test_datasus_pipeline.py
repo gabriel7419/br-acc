@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.datasus import DatasusPipeline
+from bracc_etl.pipelines.datasus import DatasusPipeline
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

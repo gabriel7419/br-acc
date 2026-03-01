@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from icarus_etl.pipelines.cnpj import CNPJPipeline, parse_capital_social
+from bracc_etl.pipelines.cnpj import CNPJPipeline, parse_capital_social
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

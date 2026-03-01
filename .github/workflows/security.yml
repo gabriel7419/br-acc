@@ -100,7 +100,7 @@ jobs:
 
   public-boundary-gate:
     name: Public Boundary Gate
-    if: github.repository == 'brunoclz/br-acc'
+    if: github.repository == 'World-Open-Graph/br-acc'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

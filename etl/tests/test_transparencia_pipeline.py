@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import MagicMock
 
-from icarus_etl.pipelines.transparencia import (
+from bracc_etl.pipelines.transparencia import (
     TransparenciaPipeline,
     _extract_cpf_middle6,
     _make_office_id,

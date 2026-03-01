@@ -1,7 +1,7 @@
 import pytest
 from httpx import AsyncClient
 
-from icarus.services.neo4j_service import CypherLoader
+from bracc.services.neo4j_service import CypherLoader
 
 # Expected node labels that form the IDOR allowlist.
 # If a new label is added to the queries, add it here too.

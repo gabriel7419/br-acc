@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.eu_sanctions import (
+from bracc_etl.pipelines.eu_sanctions import (
     VALID_EU_TYPES,
     EuSanctionsPipeline,
     _clean_entity_type,

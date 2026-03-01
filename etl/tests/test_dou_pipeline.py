@@ -13,7 +13,7 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from icarus_etl.pipelines.dou import (
+from bracc_etl.pipelines.dou import (
     DouPipeline,
     _classify_act,
     _extract_cnpjs,

@@ -3,7 +3,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from httpx import AsyncClient
 
-from icarus.services.neo4j_service import CypherLoader
+from bracc.services.neo4j_service import CypherLoader
 
 FAKE_PDF = b"%PDF-1.4 fake pdf content for testing"
 
@@ -116,7 +116,7 @@ async def test_create_investigation(
     }
     mock_record = _mock_record(record_data)
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, mock_record)
 
@@ -157,7 +157,7 @@ async def test_list_investigations(
     mock_record = _mock_record(record_data)
     user_rec = _user_record()
 
-    from icarus.main import app
+    from bracc.main import app
 
     driver = app.state.neo4j_driver
     mock_session = AsyncMock()
@@ -199,7 +199,7 @@ async def test_get_investigation_no_auth(client: AsyncClient) -> None:
 async def test_get_nonexistent_investigation(
     client: AsyncClient, auth_headers: dict[str, str]
 ) -> None:
-    from icarus.main import app
+    from bracc.main import app
 
     user_rec = _user_record()
     driver = app.state.neo4j_driver
@@ -249,7 +249,7 @@ async def test_delete_investigation(
 ) -> None:
     delete_record = _mock_record({"deleted": 1})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -278,7 +278,7 @@ async def test_create_annotation(
     }
     mock_record = _mock_record(record_data)
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, mock_record)
 
@@ -304,7 +304,7 @@ async def test_create_tag(
     }
     mock_record = _mock_record(record_data)
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, mock_record)
 
@@ -329,7 +329,7 @@ async def test_share_investigation(
     }
     mock_record = _mock_record(record_data)
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, mock_record)
 
@@ -355,7 +355,7 @@ async def test_export_investigation(
         "entity_ids": [],
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     user_rec = _user_record()
     call_count = 0
@@ -415,7 +415,7 @@ async def test_export_pdf_returns_pdf(
         "entity_ids": [],
     })
 
-    from icarus.main import app
+    from bracc.main import app
 
     user_rec = _user_record()
     driver = app.state.neo4j_driver
@@ -463,7 +463,7 @@ async def test_export_pdf_returns_pdf(
 async def test_export_pdf_not_found(
     client: AsyncClient, auth_headers: dict[str, str]
 ) -> None:
-    from icarus.main import app
+    from bracc.main import app
 
     user_rec = _user_record()
     driver = app.state.neo4j_driver
@@ -502,7 +502,7 @@ async def test_delete_annotation(
 ) -> None:
     delete_record = _mock_record({"deleted": 1})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -519,7 +519,7 @@ async def test_delete_annotation_not_found(
 ) -> None:
     delete_record = _mock_record({"deleted": 0})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -544,7 +544,7 @@ async def test_delete_tag(
 ) -> None:
     delete_record = _mock_record({"deleted": 1})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -561,7 +561,7 @@ async def test_delete_tag_not_found(
 ) -> None:
     delete_record = _mock_record({"deleted": 0})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -586,7 +586,7 @@ async def test_remove_entity(
 ) -> None:
     delete_record = _mock_record({"deleted": 1})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 
@@ -603,7 +603,7 @@ async def test_remove_entity_not_found(
 ) -> None:
     delete_record = _mock_record({"deleted": 0})
 
-    from icarus.main import app
+    from bracc.main import app
 
     _setup_session_with_user_and_data(app.state.neo4j_driver, delete_record)
 

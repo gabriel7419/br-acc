@@ -4,7 +4,7 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
-PatternModule = pytest.importorskip("icarus.services.pattern_service")
+PatternModule = pytest.importorskip("bracc.services.pattern_service")
 PATTERN_QUERIES = PatternModule.PATTERN_QUERIES
 run_pattern = PatternModule.run_pattern
 
@@ -69,7 +69,7 @@ async def test_run_pattern_forwards_include_probable_parameter() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         await run_pattern(session, "debtor_contracts", include_probable=True)
 
@@ -99,7 +99,7 @@ async def test_debtor_contracts_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "debtor_contracts")
 
@@ -135,7 +135,7 @@ async def test_embargoed_receiving_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "embargoed_receiving")
 
@@ -165,7 +165,7 @@ async def test_loan_debtor_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "loan_debtor")
 
@@ -199,7 +199,7 @@ async def test_donation_amendment_loop_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "donation_amendment_loop")
 
@@ -232,7 +232,7 @@ async def test_amendment_beneficiary_contracts_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "amendment_beneficiary_contracts")
 
@@ -260,7 +260,7 @@ async def test_debtor_health_operator_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "debtor_health_operator")
 
@@ -295,7 +295,7 @@ async def test_sanctioned_health_operator_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "sanctioned_health_operator")
 
@@ -330,7 +330,7 @@ async def test_shell_company_contracts_returns_results() -> None:
 
     session = AsyncMock()
 
-    with patch("icarus.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
+    with patch("bracc.services.pattern_service.execute_query", new_callable=AsyncMock) as mock_eq:
         mock_eq.return_value = [mock_record]
         results = await run_pattern(session, "shell_company_contracts")
 

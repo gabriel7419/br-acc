@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.stf import StfPipeline, _generate_case_id
+from bracc_etl.pipelines.stf import StfPipeline, _generate_case_id
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

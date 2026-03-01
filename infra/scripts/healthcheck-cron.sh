@@ -5,9 +5,9 @@ set -euo pipefail
 # On failure, sends alert via webhook (configure ALERT_WEBHOOK_URL).
 # Usage: sudo bash infra/scripts/healthcheck-cron.sh
 
-DEPLOY_DIR="${DEPLOY_DIR:-/opt/icarus}"
+DEPLOY_DIR="${DEPLOY_DIR:-/opt/bracc}"
 HEALTH_SCRIPT="${DEPLOY_DIR}/infra/scripts/_healthcheck.sh"
-CRON_ENTRY="*/5 * * * * ${HEALTH_SCRIPT} >> /var/log/icarus-health.log 2>&1"
+CRON_ENTRY="*/5 * * * * ${HEALTH_SCRIPT} >> /var/log/bracc-health.log 2>&1"
 
 # Create the actual health check script
 cat > "$HEALTH_SCRIPT" << 'SCRIPT'
@@ -25,7 +25,7 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S')] Health check failed: $HEALTH_URL"
 if [ -n "$ALERT_WEBHOOK_URL" ]; then
     curl -sf -X POST "$ALERT_WEBHOOK_URL" \
         -H "Content-Type: application/json" \
-        -d "{\"text\":\"ICARUS health check failed at $(date '+%Y-%m-%d %H:%M:%S') — ${HEALTH_URL}\"}" \
+        -d "{\"text\":\"BRACC health check failed at $(date '+%Y-%m-%d %H:%M:%S') — ${HEALTH_URL}\"}" \
         > /dev/null 2>&1 || true
 fi
 SCRIPT
@@ -39,4 +39,4 @@ fi
 (crontab -l 2>/dev/null; echo "$CRON_ENTRY") | crontab -
 echo "Installed health check cron (every 5 min)."
 echo "Set ALERT_WEBHOOK_URL env var for notifications."
-echo "Logs: /var/log/icarus-health.log"
+echo "Logs: /var/log/bracc-health.log"

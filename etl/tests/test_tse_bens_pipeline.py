@@ -6,7 +6,7 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from icarus_etl.pipelines.tse_bens import TseBensPipeline, _make_asset_id, _parse_value
+from bracc_etl.pipelines.tse_bens import TseBensPipeline, _make_asset_id, _parse_value
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

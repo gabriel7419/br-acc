@@ -10,7 +10,7 @@ services:
       - caddy-data:/data
       - caddy-config:/config
     networks:
-      - icarus
+      - bracc
     depends_on:
       - api
       - frontend
@@ -29,7 +29,7 @@ services:
       - ./neo4j/import:/var/lib/neo4j/import
       - ./neo4j/init.cypher:/var/lib/neo4j/init.cypher
     networks:
-      - icarus
+      - bracc
     healthcheck:
       test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "${NEO4J_PASSWORD}", "RETURN 1"]
       interval: 10s
@@ -48,7 +48,7 @@ services:
       CORS_ORIGINS: https://${DOMAIN}
       LOG_LEVEL: ${LOG_LEVEL:-info}
     networks:
-      - icarus
+      - bracc
     depends_on:
       neo4j:
         condition: service_healthy
@@ -57,12 +57,12 @@ services:
     build: ../frontend
     restart: unless-stopped
     networks:
-      - icarus
+      - bracc
     depends_on:
       - api
 
 networks:
-  icarus:
+  bracc:
     driver: bridge
 
 volumes:

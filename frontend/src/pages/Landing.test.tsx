@@ -66,7 +66,7 @@ describe("Landing", () => {
     renderLanding();
     expect(screen.getByText("Siga o dinheiro p\u00FAblico")).toBeInTheDocument();
     expect(screen.getByText("Explorar o grafo")).toBeInTheDocument();
-    expect(screen.getByText("ICARUS \u00B7 Dados abertos")).toBeInTheDocument();
+    expect(screen.getByText("BRACC \u00B7 Dados abertos")).toBeInTheDocument();
   });
 
   it("shows all 13 data sources", async () => {

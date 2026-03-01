@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.icij import (
+from bracc_etl.pipelines.icij import (
     EXACT_MATCH,
     HIGH_CONFIDENCE,
     MIN_CONFIDENCE,

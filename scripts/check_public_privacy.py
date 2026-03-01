@@ -21,7 +21,7 @@ FORBIDDEN_IN_PUBLIC_QUERIES = (
 
 def check_public_queries(repo_root: Path) -> list[str]:
     errors: list[str] = []
-    query_dir = repo_root / "api" / "src" / "icarus" / "queries"
+    query_dir = repo_root / "api" / "src" / "bracc" / "queries"
     for path in sorted(query_dir.glob("public_*.cypher")):
         content = path.read_text(encoding="utf-8")
         for token in FORBIDDEN_IN_PUBLIC_QUERIES:

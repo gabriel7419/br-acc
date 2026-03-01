@@ -81,7 +81,7 @@ const FEATURES: FeatureDef[] = [
   { key: "investigations", icon: <InvestigationIcon />, iconBg: "rgba(78, 168, 222, 0.12)" },
 ];
 
-const STATS_CACHE_KEY = "icarus_stats_cache";
+const STATS_CACHE_KEY = "bracc_stats_cache";
 
 export function Landing() {
   const { t } = useTranslation();

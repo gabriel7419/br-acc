@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 
 import pandas as pd
 
-from icarus_etl.pipelines.ofac import (
+from bracc_etl.pipelines.ofac import (
     VALID_SDN_TYPES,
     OfacPipeline,
     _clean_sdn_type,

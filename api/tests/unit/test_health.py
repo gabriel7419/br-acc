@@ -18,7 +18,7 @@ async def test_health_returns_ok(client: AsyncClient) -> None:
 @pytest.mark.anyio
 async def test_meta_health_has_security_headers(client: AsyncClient) -> None:
     with patch(
-        "icarus.routers.meta.execute_query_single",
+        "bracc.routers.meta.execute_query_single",
         new_callable=AsyncMock,
         return_value={"ok": 1},
     ):
@@ -141,12 +141,12 @@ async def test_meta_stats(client: AsyncClient) -> None:
     }
 
     # Reset the stats cache between tests
-    import icarus.routers.meta as meta_module
+    import bracc.routers.meta as meta_module
     meta_module._stats_cache = None
     meta_module._stats_cache_time = 0.0
 
     with patch(
-        "icarus.routers.meta.execute_query_single",
+        "bracc.routers.meta.execute_query_single",
         new_callable=AsyncMock,
         return_value=mock_record,
     ):

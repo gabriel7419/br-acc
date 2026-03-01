@@ -33,7 +33,7 @@ def download_year(output_dir: Path, year: int) -> None:
             url,
             follow_redirects=True,
             timeout=300,
-            headers={"User-Agent": "ICARUS-ETL/1.0"},
+            headers={"User-Agent": "BRACC-ETL/1.0"},
         )
         response.raise_for_status()
         dest_zip.write_bytes(response.content)

@@ -45,7 +45,7 @@ export function AppShell() {
   const [isMobileBlocked, setIsMobileBlocked] = useState(false);
   const [theme, setTheme] = useState<"dark" | "light">(() => {
     try {
-      const saved = localStorage.getItem("icarus_theme");
+      const saved = localStorage.getItem("bracc_theme");
       if (saved === "light" || saved === "dark") return saved;
     } catch { /* noop */ }
     if (typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: light)").matches) return "light";
@@ -76,7 +76,7 @@ export function AppShell() {
     } else {
       delete document.documentElement.dataset.theme;
     }
-    try { localStorage.setItem("icarus_theme", theme); } catch { /* noop */ }
+    try { localStorage.setItem("bracc_theme", theme); } catch { /* noop */ }
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
@@ -144,7 +144,7 @@ export function AppShell() {
       <nav className={`${styles.sidebar} ${sidebarCollapsed ? styles.collapsed : ""}`}>
         <div className={styles.sidebarHeader}>
           <Link to="/app" className={styles.logo}>
-            {sidebarCollapsed ? "I" : "ICARUS"}
+            {sidebarCollapsed ? "I" : "BRACC"}
           </Link>
         </div>
 

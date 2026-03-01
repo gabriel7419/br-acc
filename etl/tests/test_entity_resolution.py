@@ -1,5 +1,5 @@
-from icarus_etl.entity_resolution.confidence import classify_confidence, normalize_score
-from icarus_etl.entity_resolution.config import get_person_settings
+from bracc_etl.entity_resolution.confidence import classify_confidence, normalize_score
+from bracc_etl.entity_resolution.config import get_person_settings
 
 
 class TestNormalizeScore:
