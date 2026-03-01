@@ -33,7 +33,22 @@ Data patterns from public records are signals, not legal proof.
 - ETL: Python (pandas, httpx)
 - Infra: Docker Compose
 
+## Prerequisites
+
+Before starting, ensure you have the following installed:
+
+- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
+- `make` (build-essential)
+- [Node.js 20+](https://nodejs.org/)
+- [uv](https://github.com/astral-sh/uv) (for fast Python dependency management)
+
+```bash
+# install uv globally (Unix/macOS)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ## Quick Start
+
 
 ```bash
 cp .env.example .env

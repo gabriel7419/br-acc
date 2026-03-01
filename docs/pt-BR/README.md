@@ -37,6 +37,20 @@ Padrões em dados públicos são sinais, não prova jurídica.
 - ETL: Python (pandas, httpx)
 - Infra: Docker Compose
 
+## Pré-requisitos
+
+Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
+
+- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/install/)
+- `make` (build-essential)
+- [Node.js 20+](https://nodejs.org/)
+- [uv](https://github.com/astral-sh/uv) (gerenciador rápido de pacotes Python)
+
+```bash
+# instalar o uv globalmente (Unix/macOS)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ## Quick Start
 
 ```bash
