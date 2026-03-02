@@ -1,4 +1,4 @@
-.PHONY: dev stop seed bootstrap-demo bootstrap-full bootstrap-all bootstrap-all-noninteractive bootstrap-all-report check-public-claims check-source-urls check-pipeline-contracts check-pipeline-inputs generate-pipeline-status generate-source-summary generate-reference-metrics
+.PHONY: dev stop seed bootstrap-demo bootstrap-full bootstrap-all bootstrap-all-noninteractive bootstrap-all-report check-public-claims check-source-urls check-pipeline-contracts check-pipeline-inputs generate-pipeline-status generate-source-summary generate-reference-metrics check neutrality
 
 dev:
 	docker compose -f infra/docker-compose.yml up -d
@@ -44,3 +44,14 @@ generate-source-summary:
 
 generate-reference-metrics:
 	python3 scripts/generate_reference_metrics.py --json-output audit-results/public-trust/latest/neo4j-reference-metrics.json --doc-output docs/reference_metrics.md
+
+check:
+	cd api && bash ../scripts/ci/python_quality.sh
+	cd etl && bash ../scripts/ci/python_quality.sh
+	cd frontend && bash ../scripts/ci/frontend_quality.sh
+
+neutrality:
+	@! grep -rn "suspicious\|corrupt\|criminal\|fraudulent\|illegal\|guilty" \
+		api/src/ etl/src/ frontend/src/ \
+		--include="*.py" --include="*.ts" --include="*.tsx" --include="*.json" \
+		|| (echo "NEUTRALITY VIOLATION: banned words found in source" && exit 1)
